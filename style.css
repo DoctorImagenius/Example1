@@ -1,0 +1,343 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+    background: #ecf0f3;
+}
+.container {
+    margin-left: 1.8em;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+}
+.row {
+    justify-content: center;
+    display: flex;
+}
+.row button {
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: 0.1s;
+    box-shadow: 5px 5px 8px #00000020, -5px -5px 8px #ffff;
+}
+.row button:hover {
+    box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1),
+        inset -5px -5px 8px #fff;
+    background: #fff;
+}
+#screen {
+    margin-bottom: 0.5em;
+    width: auto;
+    height: 70px;
+    font-size: 35px;
+    outline: none;
+    border: none;
+    text-align: right;
+    padding-right: 0.5em;
+    background: #ecf0f3;
+    border-radius: 6px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+#eval {
+    background: #33ccff;
+    color: #fff;
+    box-shadow: inset 5px 5px 8px #66d9ff, inset -5px -5px 8px #00ace6;
+    width: 80%;
+}
+#eval:hover {
+    box-shadow: inset 5px 5px 8px #00ace6, inset -5px -5px 8px #00ace6;
+}
+#ac {
+    background: #33cc33;
+    color: #fff;
+}
+#ac:hover {
+    box-shadow: inset 5px 5px 8px #2eb82e, inset -5px -5px 8px #33cc33;
+}
+#cal-history {
+    background: #ff3399;
+    color: #fff;
+}
+#cal-history:hover {
+    box-shadow: inset 5px 5px 8px #e60073, inset -5px -5px 8px #ff3399;
+}
+.history {
+    max-height: 150px;
+    width: 450px;
+    overflow-y: scroll;
+    margin-top: 1.8em;
+    margin-left: 1.8em;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.history-display {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 3px 3px 6px #848586, -3px -3px 6px #ffffff;
+}
+.historyButton {
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 8px #00000020, -5px -5px 8px #ffff;
+    transition: 0.1s;
+    font-size: 20px;
+}
+.historyButton:hover {
+    box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1),
+        inset -5px -5px 8px #fff;
+    background: #fff;
+}
+#variable {
+    max-height: 200px;
+    width: 450px;
+    margin-top: 1.8em;
+    margin-left: 1.8em;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.variableInputs {
+    display: flex;
+    position: sticky;
+    top: 0px;
+}
+#varName {
+    width: 80px;
+    height: 50px;
+    font-size: 30px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    text-align: left;
+    padding-right: 0.5em;
+    background: #ecf0f3;
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px -3px 3px #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+#varValue {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    padding-left: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    text-align: left;
+    padding-right: 0.5em;
+    background: #ecf0f3;
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px -3px 3px #ffffff;
+}
+#AddVar {
+    height: 50px;
+    margin-left: 10px;
+    font-size: 20px;
+    background: #33ccff;
+    color: #fff;
+    box-shadow: inset 5px 5px 8px #66d9ff, inset -5px -5px 8px #00ace6;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    transition: 0.1s;
+}
+#AddVar:hover {
+    box-shadow: inset 5px 5px 8px #00ace6, inset -5px -5px 8px #00ace6;
+}
+#variableOutputs {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.delhistory {
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 8px rgb(94, 94, 94), -3px -3px 8px white;
+    font-size: 20px;
+    background: #ff0000;
+    color: #fff;
+    transition: 0.2s;
+}
+.delhistory:hover {
+    box-shadow: none;
+}
+
+@media screen and (max-width: 550px) and (min-width: 450px) {
+    .container {
+        margin-left: 0;
+    }
+
+    .row button {
+        width: 65px;
+    }
+    #screen {
+        max-width: 500px;
+        font-size: 30px;
+    }
+    .history {
+        width: 370px;
+        margin-left: 0;
+    }
+    #variable {
+        width: 370px;
+        margin-left: 0;
+    }
+    #varName {
+        width: 50px;
+        font-size: 18px;
+    }
+    #varValue {
+        width: 150px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .container {
+        margin-left: 0;
+    }
+
+    .row button {
+        width: 40px;
+    }
+    #screen {
+        max-width: 300px;
+        font-size: 20px;
+    }
+    #cal-history {
+        font-size: 10px;
+    }
+    .history {
+        width: 260px;
+        margin-left: 0;
+    }
+    #variable {
+        width: 260px;
+        margin-left: 0;
+    }
+    .variableInputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #varName {
+        width: 50px;
+        font-size: 18px;
+    }
+    #varValue {
+        width: 150px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 300px) and (min-width: 230px) {
+    .container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .row button {
+        width: 30px;
+    }
+    #screen {
+        max-width: 185px;
+        font-size: 20px;
+    }
+    #cal-history {
+        font-size: 5px;
+    }
+    .history {
+        width: 185px;
+        margin-left: 0;
+    }
+    .historyButton {
+        display: flex;
+        flex-direction: column;
+    }
+    #variable {
+        width: 185px;
+        margin-left: 0;
+    }
+    .variableInputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #varName {
+        width: 50px;
+        font-size: 18px;
+    }
+    #varValue {
+        width: 150px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 230px) {
+    .container {
+        margin-left: 0;
+        padding: 5px;
+    }
+
+    .row button {
+        width: 20px;
+        font-size: 10px;
+    }
+    #screen {
+        max-width: 130px;
+        font-size: 20px;
+    }
+    #cal-history {
+        font-size: 3px;
+    }
+    .history {
+        width: 120px;
+        margin-left: 0;
+    }
+    .historyButton {
+        display: flex;
+        flex-direction: column;
+    }
+    #variable {
+        width: 120px;
+        margin-left: 0;
+    }
+    .variableInputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #varName {
+        width: 50px;
+        font-size: 18px;
+    }
+    #varValue {
+        width: 100px;
+        font-size: 20px;
+        margin-left: 0;
+    }
+    #AddVar {
+        margin-left: 0px;
+    }
+}
